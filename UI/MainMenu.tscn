@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://6pafpyhqut05"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_qm0a2"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qm0a2")
+
+[node name="Game title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 165.0
+offset_right = 1153.0
+offset_bottom = 195.0
+text = "Game Name"
+horizontal_alignment = 1
+
+[node name="Play" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 330.0
+offset_right = 1154.0
+offset_bottom = 360.0
+text = "Play"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Play"]
+layout_mode = 0
+offset_left = 527.0
+offset_top = -7.0
+offset_right = 624.0
+offset_bottom = 36.0
+
+[node name="Exit" type="Label" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 429.0
+offset_right = 1151.0
+offset_bottom = 459.0
+text = "Exit"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Exit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_top = -0.233
+anchor_right = 0.47
+anchor_bottom = -0.233
+offset_left = -0.440063
+offset_top = -0.00999975
+offset_right = 67.5599
+offset_bottom = 41.99
+
+[connection signal="pressed" from="Play/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Exit/Button" to="." method="_on_exit_pressed"]
