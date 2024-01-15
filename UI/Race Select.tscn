@@ -20,6 +20,7 @@ offset_bottom = 359.0
 text = "Robot Collective"
 
 [node name="Nanites" type="Button" parent="."]
+layout_mode = 0
 offset_left = 816.0
 offset_top = 152.0
 offset_right = 1022.0
@@ -27,6 +28,7 @@ offset_bottom = 368.0
 text = "Tiny Robot"
 
 [node name="Flood" type="Button" parent="."]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 149.0
 offset_right = 686.0
