@@ -9,7 +9,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -22,3 +22,4 @@ func _on_texture_rect_mouse_entered():
 func _on_texture_rect_mouse_exited():
 	$StarInfoLabel.hide()
 	pass # Replace with function body.
+

@@ -8076,3 +8076,5 @@ offset_right = 3.0
 offset_bottom = 2.01094
 texture = ExtResource("2_5ap4q")
 expand_mode = 2
+
+[node name="StarMapArea" type="Node2D" parent="."]
