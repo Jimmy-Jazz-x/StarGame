@@ -53,8 +53,8 @@ func _ready():
 
 					if child != child2:
 						var tempPos = child.position.distance_squared_to(child2.position)
-						print("Looking for Planets")
-						print(str(tempPos))
+						#print("Looking for Planets")
+						#print(str(tempPos))
 						if tempPos < closest1:
 							closest1 = tempPos
 							closest1c = child2
@@ -72,16 +72,33 @@ func _ready():
 				print(closest1c.get_meta("StarName"))
 				print(closest2c.get_meta("StarName"))
 				print(closest3c.get_meta("StarName"))
-				var newWarp = Warpline.instantiate()
-				newWarp.position = child.position
-				newWarp.set_meta("Star Link 1",closest1c.get_meta("StarName"))
-				newWarp.set_meta("Star Link 2",child.get_meta("StarName"))
-				child.add_child(newWarp)
-				#if rdi >=1 :
-					
-				#if rdi >=2 :
-					
-				#if rdi >=3 :
+				#child.add_child(newWarp)
+				#newWarp.position = child.position
+				#draw_line(child.position,closest1c.position,Color.WHITE,80)
+				if rdi >=1 :
+					var newWarp = Warpline.instantiate()
+					newWarp.set_meta("StarLink1",closest1c.get_meta("StarName"))
+					newWarp.set_meta("StarLink2",child.get_meta("StarName"))
+					newWarp.set_meta("StarVector1",closest1c.position)
+					newWarp.set_meta("StarVector2",child.position)
+					child.add_child(newWarp)
+					newWarp.draw
+				if rdi >=2 :
+					var newWarp = Warpline.instantiate()
+					newWarp.set_meta("StarLink1",closest2c.get_meta("StarName"))
+					newWarp.set_meta("StarLink2",child.get_meta("StarName"))
+					newWarp.set_meta("StarVector1",closest2c.position)
+					newWarp.set_meta("StarVector2",child.position)
+					child.add_child(newWarp)
+					newWarp.draw
+				if rdi >=3 :
+					var newWarp = Warpline.instantiate()
+					newWarp.set_meta("StarLink1",closest3c.get_meta("StarName"))
+					newWarp.set_meta("StarLink2",child.get_meta("StarName"))
+					newWarp.set_meta("StarVector1",closest3c.position)
+					newWarp.set_meta("StarVector2",child.position)
+					child.add_child(newWarp)
+					newWarp.draw
 					
 				
 				
@@ -102,4 +119,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-
+	
+func _draw() -> void:
+	pass
