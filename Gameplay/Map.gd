@@ -4,6 +4,7 @@ var Star1 = preload("res://SingleStar.tscn")
 var Star2 = preload("res://SingleStar.tscn")
 var Star3 = preload("res://SingleStar.tscn")
 var Warpline = preload("res://Gameplay/warp_line.tscn")
+var Player = preload("res://Gameplay/player_body_2d.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var Number_of_Stars = rng.randi_range(45,80)
@@ -33,6 +34,7 @@ func _ready():
 			TheStar.position = Vector2(pX,pY-250)
 			TheStar.set_meta("IndexNum",i)
 			TheStar.set_meta("StarName",str(randi()))
+			TheStar.set_mass(10000000.00)
 			$StarMapArea.add_child(TheStar)
 			i = i + 1
 
@@ -77,24 +79,24 @@ func _ready():
 				#draw_line(child.position,closest1c.position,Color.WHITE,80)
 				if rdi >=1 :
 					var newWarp = Warpline.instantiate()
-					newWarp.set_meta("StarLink1",closest1c.get_meta("StarName"))
-					newWarp.set_meta("StarLink2",child.get_meta("StarName"))
+					newWarp.set_meta("StarLink1",closest1c.name)
+					newWarp.set_meta("StarLink2",child.name)
 					newWarp.set_meta("StarVector1",closest1c.position)
 					newWarp.set_meta("StarVector2",child.position)
 					child.add_child(newWarp)
 					newWarp.draw
 				if rdi >=2 :
 					var newWarp = Warpline.instantiate()
-					newWarp.set_meta("StarLink1",closest2c.get_meta("StarName"))
-					newWarp.set_meta("StarLink2",child.get_meta("StarName"))
+					newWarp.set_meta("StarLink1",closest2c.name)
+					newWarp.set_meta("StarLink2",child.name)
 					newWarp.set_meta("StarVector1",closest2c.position)
 					newWarp.set_meta("StarVector2",child.position)
 					child.add_child(newWarp)
 					newWarp.draw
 				if rdi >=3 :
 					var newWarp = Warpline.instantiate()
-					newWarp.set_meta("StarLink1",closest3c.get_meta("StarName"))
-					newWarp.set_meta("StarLink2",child.get_meta("StarName"))
+					newWarp.set_meta("StarLink1",closest3c.name)
+					newWarp.set_meta("StarLink2",child.name)
 					newWarp.set_meta("StarVector1",closest3c.position)
 					newWarp.set_meta("StarVector2",child.position)
 					child.add_child(newWarp)
@@ -112,8 +114,8 @@ func _ready():
 	#Draw Line starting at Planet 1 going to Planet 2
 	
 	
-
-
+	Spawn_Player()
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -122,3 +124,21 @@ func _process(_delta):
 	
 func _draw() -> void:
 	pass
+
+func Spawn_Player():
+	var NewPlayer = Player.instantiate()
+	$PlayerMapArea.add_child(NewPlayer)
+	NewPlayer.Spawn($StarMapArea.get_child(40))
+	pass
+
+	
+	
+	
+
+
+func _on_tick_timeout():
+	
+	print("Tick")
+	for Players in $PlayerMapArea.get_children():
+		Players.Update()
+	pass # Replace with function body.

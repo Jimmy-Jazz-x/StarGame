@@ -11,6 +11,7 @@ texture = ExtResource("1_5tuc0")
 script = ExtResource("2_5l1w7")
 metadata/IndexNum = 0
 metadata/StarName = ""
+metadata/Mass = 0.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -63.0

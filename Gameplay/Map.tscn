@@ -8068,7 +8068,6 @@ format = 2
 scale = Vector2(0.000520833, 0.000520833)
 
 [node name="TextureRect" type="TextureRect" parent="SpaceMap"]
-visible = false
 show_behind_parent = true
 z_index = -50
 offset_left = -3.0
@@ -8078,4 +8077,12 @@ offset_bottom = 2.01094
 texture = ExtResource("2_5ap4q")
 expand_mode = 2
 
+[node name="PlayerMapArea" type="Node2D" parent="."]
+
 [node name="StarMapArea" type="Node2D" parent="."]
+
+[node name="Tick" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]

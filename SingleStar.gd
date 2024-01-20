@@ -29,10 +29,17 @@ func _on_texture_rect_mouse_exited():
 
 func _on_area_2d_body_entered(body):
 	print("OVERLAPPING!")
-	position = position + Vector2(randf_range(5,50),randf_range(5,50))
+	#position = position + Vector2(randf_range(5,50),randf_range(5,50))
 	pass # Replace with function body.
 
 
 func _on_area_2d_body_exited(body):
 	print("overlappgone")
 	pass # Replace with function body.
+	
+func set_mass(Mass):
+	set_meta("Mass",float(Mass))
+	pass
+
+func get_mass():
+	return get_meta("Mass")

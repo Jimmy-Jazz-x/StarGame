@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkkrnvsws1m71"]
+
+[ext_resource type="Script" path="res://Gameplay/player_body_2d.gd" id="1_jofxs"]
+[ext_resource type="Texture2D" uid="uid://dm1eaqkvdaupy" path="res://Textures/Player.png" id="1_nhf3l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wlxqt"]
+radius = 60.0
+
+[node name="PlayerBody2d" type="CharacterBody2D"]
+script = ExtResource("1_jofxs")
+metadata/StarName = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wlxqt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+texture = ExtResource("1_nhf3l")
