@@ -8055,7 +8055,6 @@ sources/0 = SubResource("TileSetAtlasSource_m6wvl")
 script = ExtResource("1_2bpvo")
 
 [node name="MainCam2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 script = ExtResource("4_7u8ky")
 

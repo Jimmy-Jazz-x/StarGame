@@ -22,7 +22,7 @@ func _process(_delta):
 		dragging = false
 	if InputEventMouseMotion and dragging:
 		print(str(get_global_mouse_position()))
-		self.position = (mouse_start_pos - get_global_mouse_position()) + screen_start_position
+		self.position = (mouse_start_pos - get_global_mouse_position()) * 10 + screen_start_position
 		
 	elif Input.is_action_just_released("Zoom In"):
 		zoom += ZoomSpeed
