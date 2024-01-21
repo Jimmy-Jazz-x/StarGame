@@ -10,3 +10,205 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pdcwr")
+metadata/ColdTechLvl = 1
+metadata/HotTechLvl = 1
+metadata/RadsTechLvl = 1
+metadata/Mass = 5000000
+metadata/AcidTechLvl = 1
+metadata/ProdTechLvl = 1
+metadata/TravelTechLvl = 1
+metadata/RepTechLvl = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 643.0
+offset_bottom = 649.0
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="tempMass" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 136.0
+offset_right = 42.0
+offset_bottom = 159.0
+
+[node name="Title" type="RichTextLabel" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 644.0
+offset_bottom = 58.0
+text = "Swarm Resources"
+
+[node name="RadsTechLvl" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 342.0
+offset_right = 644.0
+offset_bottom = 370.0
+text = "1000000"
+text_direction = 1
+
+[node name="RadsTechTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+offset_top = 342.0
+offset_right = 644.0
+offset_bottom = 370.0
+text = "Rad Tech Level:"
+
+[node name="AcidTechLvl" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 285.0
+offset_right = 644.0
+offset_bottom = 313.0
+text = "1000000"
+text_direction = 1
+
+[node name="AcidTechTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+offset_top = 285.0
+offset_right = 643.0
+offset_bottom = 313.0
+text = "Acid Tech Level:"
+
+[node name="ColdTechLvl" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 228.0
+offset_right = 644.0
+offset_bottom = 256.0
+text = "1000000"
+text_direction = 1
+
+[node name="ColdTechTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+offset_top = 228.0
+offset_right = 642.0
+offset_bottom = 256.0
+text = "Cold Tech Level:"
+
+[node name="HotTechLvl" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 171.0
+offset_right = 644.0
+offset_bottom = 199.0
+text = "1000000"
+text_direction = 1
+
+[node name="HotTechTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+offset_top = 171.0
+offset_right = 642.0
+offset_bottom = 199.0
+text = "Hot Tech Level:"
+
+[node name="MassTextLabel" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 114.0
+offset_right = 644.0
+offset_bottom = 142.0
+text = "1000000"
+text_direction = 1
+
+[node name="TotalMassTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+offset_top = 114.0
+offset_right = 642.0
+offset_bottom = 142.0
+text = "Total Mass:"
+
+[node name="PopTextLabel" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 57.0
+offset_right = 644.0
+offset_bottom = 85.0
+text = "1000000"
+text_direction = 1
+
+[node name="ProdTechLvl" type="Label" parent="PanelContainer/Panel"]
+offset_left = 164.0
+offset_top = 462.0
+offset_right = 464.0
+offset_bottom = 485.0
+text = "1000000"
+text_direction = 1
+
+[node name="RepTechLvl" type="Label" parent="PanelContainer/Panel"]
+offset_left = 183.0
+offset_top = 496.0
+offset_right = 483.0
+offset_bottom = 519.0
+text = "1000000"
+text_direction = 1
+
+[node name="TotalPopTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+layout_mode = 0
+offset_top = 57.0
+offset_right = 643.0
+offset_bottom = 85.0
+text = "Total Population:"
+
+[node name="TravelTechLvl" type="Label" parent="PanelContainer/Panel"]
+offset_left = 177.0
+offset_top = 531.0
+offset_right = 477.0
+offset_bottom = 554.0
+text = "1000000"
+text_direction = 1
+
+[node name="RepButton7" type="Button" parent="."]
+offset_left = -2.0
+offset_top = 492.0
+offset_right = 111.0
+offset_bottom = 523.0
+text = "Buy Replication Tech"
+
+[node name="TravelButton6" type="Button" parent="."]
+offset_top = 525.0
+offset_right = 113.0
+offset_bottom = 556.0
+text = "Buy Travel Tech"
+
+[node name="ProdButton5" type="Button" parent="."]
+offset_top = 458.0
+offset_right = 113.0
+offset_bottom = 489.0
+text = "Buy Prod Tech"
+
+[node name="RadButton4" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 369.0
+offset_right = 115.0
+offset_bottom = 400.0
+text = "Buy Rad Tech"
+
+[node name="AcidButton3" type="Button" parent="."]
+offset_left = 3.0
+offset_top = 312.0
+offset_right = 118.0
+offset_bottom = 343.0
+text = "Buy Acid Tech"
+
+[node name="ColdButton2" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 252.0
+offset_right = 115.0
+offset_bottom = 283.0
+text = "Buy Cold Tech"
+
+[node name="HotButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 198.0
+offset_right = 45.0
+offset_bottom = 220.0
+text = "Buy Hot Tech"
+
+[connection signal="pressed" from="RepButton7" to="." method="_on_rep_button_7_pressed"]
+[connection signal="pressed" from="TravelButton6" to="." method="_on_travel_button_6_pressed"]
+[connection signal="pressed" from="ProdButton5" to="." method="_on_prod_button_5_pressed"]
+[connection signal="pressed" from="RadButton4" to="." method="_on_rad_button_4_pressed"]
+[connection signal="pressed" from="AcidButton3" to="." method="_on_acid_button_3_pressed"]
+[connection signal="pressed" from="ColdButton2" to="." method="_on_cold_button_2_pressed"]
+[connection signal="pressed" from="HotButton" to="." method="_on_hot_button_pressed"]

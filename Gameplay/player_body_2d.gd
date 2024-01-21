@@ -1,17 +1,28 @@
 extends CharacterBody2D
-
-
+var Player = preload("res://Gameplay/player_body_2d.tscn")
+const PopulationLoss = 50000
 #const SPEED = 300.0
 #const JUMP_VELOCITY = -400.0
 
-## Get the gravity from the project settings to be synced with RigidBody nodes.
-#var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+func get_poplation():
+	return get_meta("Population")
+func set_poplation(Bots):
+	set_meta("Population",Bots)
+	$PopLabel.text = str(Bots)
+	pass
+func replicate():
+	set_poplation(get_poplation() * \
+	(1+$/root/Map/MasterResourceBank.ReplicationRate(get_node(str("/root/Map/StarMapArea/" + get_meta("StarName"))))))
+	pass
 
 
-func Spawn(Location):
+func Spawn(Location,Pop):
 	#Put the player at the spwn location
 	position = Location.position
 	set_meta("StarName",Location.name)
+	Location.set_meta("Owned",true)
+	set_poplation(Pop)
 	pass
 	
 func Upgrade():
@@ -20,10 +31,23 @@ func Upgrade():
 	
 func attempt_Spread():
 	#Check all linked nodes and compute spread chance
-	for links in get_node(get_meta("StarName")).get_children():
-		print(links.name)
-		#for each child in star
-		#get only the warps
+	var links = get_node(str("/root/Map/StarMapArea/" + get_meta("StarName")))
+	print(links.name)
+	for k in links.get_meta("NumWarps"):
+		print(str(links.get_meta("NumWarps"))+"/"+str(k))
+		match k:
+			0:
+				print("1")
+				if Spreadable(links.get_parent().get_node(str(links.get_meta("Warp1")))):
+					Spread(links.get_parent().get_node(str(links.get_meta("Warp1"))))
+			1:
+				print("2")
+				if Spreadable(links.get_parent().get_node(str(links.get_meta("Warp2")))):
+					Spread(links.get_parent().get_node(str(links.get_meta("Warp2"))))
+			2:
+				print("3")
+				if Spreadable(links.get_parent().get_node(str(links.get_meta("Warp3")))):
+					Spread(links.get_parent().get_node(str(links.get_meta("Warp3"))))
 		# get the starts from the warps
 		#Check if Spread is Possible
 		#If possible Roll for spread
@@ -33,29 +57,83 @@ func attempt_Spread():
 	
 func Spread(Desitination):
 	#once Spread is scessful then actually spread by making a copy of the planet
+	print("SPREADING! HYPE!")
+	#spend Required Mass
+	$/root/Map/MasterResourceBank.Spend_Resource(Desitination.get_meta("MassRequired"))
+	Remove_Populace()
+	var NewPlayer = Player.instantiate()
+	get_parent().add_child(NewPlayer)
+	NewPlayer.Spawn(Desitination,PopulationLoss*$/root/Map/MasterResourceBank.TravelRate())
 	pass
 
 func Update():
 	print(name + ":Updating Now")
-	
+	attempt_Spread()
+	MinePlanet()
+	replicate()
 	pass
 	
+func Spreadable(StarObject):
+	var fail = false
+	if StarObject == null:
+		return false
+	if StarObject.get_meta("Owned"):
+		return false
+	if StarObject.get_meta("Hot"):
+		if $/root/Map/MasterResourceBank.get_techlvl("HotTechLvl") == 0:
+			print("TOO HOT")
+			fail = true
+	if StarObject.get_meta("Cold"):
+		if $/root/Map/MasterResourceBank.get_techlvl("ColdTechLvl") == 0:
+			print("TOO COLD")
+			fail = true
+	if StarObject.get_meta("Acid"):
+		if $/root/Map/MasterResourceBank.get_techlvl("AcidTechLvl") == 0:
+			print("TOO STINKY")
+			fail = true
+	if StarObject.get_meta("Rads"):
+		if $/root/Map/MasterResourceBank.get_techlvl("RadsTechLvl") == 0:
+			print("TOO RADIATIONY")
+			fail = true
+	
+	if $/root/Map/MasterResourceBank.get_Resource() <= StarObject.get_meta("MassRequired"):
+		print("TOO POOR")
+		fail = true
+	if not Check_Population(PopulationLoss):
+		fail = true
+		
+	if fail == true:
+		return false
+	
+	return true
+
+
+func MinePlanet():
+	var Planet = get_node(str("/root/Map/StarMapArea/" + get_meta("StarName")))
+	if not Planet.Is_Exausted():
+		#Get amount to remove
+		var Amount = $/root/Map/MasterResourceBank.MiningRate(Planet,get_poplation())
+		#remove Planet Mass
+		Planet.Remove_mass(Amount)
+		#add Resources To Pool
+		$/root/Map/MasterResourceBank.add_Resource(Amount)
+	pass
+
+func Check_Population(Amount):
+	if get_meta("Population") < PopulationLoss:
+		return false
+	return true
+	
+func Remove_Populace():
+	if Check_Population(PopulationLoss):
+		set_poplation((get_poplation()-PopulationLoss))
+	pass
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-func _physics_process(delta):
+func _physics_process(_delta):
 	pass
 	## Add the gravity.
 	#if not is_on_floor():

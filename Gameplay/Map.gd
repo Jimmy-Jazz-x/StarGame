@@ -50,7 +50,7 @@ func _ready():
 			print(child.get_meta("StarName") +"|" )
 			
 			if child.get_child_count() < 80:
-				var rdi = randi_range(1,3)
+				var rdi = randi_range(3,3)
 				for child2 in $StarMapArea.get_children():
 
 					if child != child2:
@@ -77,29 +77,68 @@ func _ready():
 				#child.add_child(newWarp)
 				#newWarp.position = child.position
 				#draw_line(child.position,closest1c.position,Color.WHITE,80)
-				if rdi >=1 :
+				if rdi >=1 and not (child.get_meta("Warp1")) and closest1c.get_meta("NumWarps")!=3:
 					var newWarp = Warpline.instantiate()
 					newWarp.set_meta("StarLink1",closest1c.name)
 					newWarp.set_meta("StarLink2",child.name)
 					newWarp.set_meta("StarVector1",closest1c.position)
 					newWarp.set_meta("StarVector2",child.position)
 					child.add_child(newWarp)
+					child.set_meta("Warp1",closest1c.name)
+					child.set_meta("NumWarps",1)
+					match closest1c.get_meta("NumWarps"):
+						0:
+							closest1c.set_meta("Warp1",child.name)
+							closest1c.set_meta("NumWarps",1)
+						1:
+							closest1c.set_meta("Warp2",child.name)
+							closest1c.set_meta("NumWarps",2)
+						2:
+							closest1c.set_meta("Warp3",child.name)
+							closest1c.set_meta("NumWarps",3)
+						
 					newWarp.draw
-				if rdi >=2 :
+				if rdi >=2 and not (child.get_meta("Warp2")) and closest2c.get_meta("NumWarps")!=3:
 					var newWarp = Warpline.instantiate()
 					newWarp.set_meta("StarLink1",closest2c.name)
 					newWarp.set_meta("StarLink2",child.name)
 					newWarp.set_meta("StarVector1",closest2c.position)
 					newWarp.set_meta("StarVector2",child.position)
 					child.add_child(newWarp)
+					child.set_meta("Warp2",closest2c.name)
+					child.set_meta("NumWarps",2)
+					match closest2c.get_meta("NumWarps"):
+						0:
+							closest2c.set_meta("Warp1",child.name)
+							closest2c.set_meta("NumWarps",1)
+						1:
+							closest2c.set_meta("Warp2",child.name)
+							closest2c.set_meta("NumWarps",2)
+						2:
+							closest2c.set_meta("Warp3",child.name)
+							closest2c.set_meta("NumWarps",3)
+						
 					newWarp.draw
-				if rdi >=3 :
+				if rdi >=3 and not(child.get_meta("Warp3")) and closest3c.get_meta("NumWarps")!=3:
 					var newWarp = Warpline.instantiate()
 					newWarp.set_meta("StarLink1",closest3c.name)
 					newWarp.set_meta("StarLink2",child.name)
 					newWarp.set_meta("StarVector1",closest3c.position)
 					newWarp.set_meta("StarVector2",child.position)
 					child.add_child(newWarp)
+					child.set_meta("Warp3",closest3c.name)
+					child.set_meta("NumWarps",3)
+					match closest3c.get_meta("NumWarps"):
+						0:
+							closest3c.set_meta("Warp1",child.name)
+							closest3c.set_meta("NumWarps",1)
+						1:
+							closest3c.set_meta("Warp2",child.name)
+							closest3c.set_meta("NumWarps",2)
+						2:
+							closest3c.set_meta("Warp3",child.name)
+							closest3c.set_meta("NumWarps",3)
+						
 					newWarp.draw
 					
 				
@@ -128,7 +167,11 @@ func _draw() -> void:
 func Spawn_Player():
 	var NewPlayer = Player.instantiate()
 	$PlayerMapArea.add_child(NewPlayer)
-	NewPlayer.Spawn($StarMapArea.get_child(40))
+	NewPlayer.Spawn($StarMapArea.get_child(40),10000000)
+	$StarMapArea.get_child(40).set_meta("Hot",false)
+	$StarMapArea.get_child(40).set_meta("Cold",false)
+	$StarMapArea.get_child(40).set_meta("Acid",false)
+	$StarMapArea.get_child(40).set_meta("Rads",false)
 	pass
 
 	
@@ -141,4 +184,17 @@ func _on_tick_timeout():
 	print("Tick")
 	for Players in $PlayerMapArea.get_children():
 		Players.Update()
+	if has_won():
+		$Tick.stop()
+		get_tree().change_scene_to_file("res://UI/win_screen.tscn")
 	pass # Replace with function body.
+
+
+func has_won():
+	#check if every planet is exausted
+	var won = true
+	for child2 in $StarMapArea.get_children():
+		if not child2.get_meta("Exausted"):
+			won = false
+	return won
+	

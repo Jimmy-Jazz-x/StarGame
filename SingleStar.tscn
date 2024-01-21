@@ -12,6 +12,17 @@ script = ExtResource("2_5l1w7")
 metadata/IndexNum = 0
 metadata/StarName = ""
 metadata/Mass = 0.0
+metadata/Warp1 = ""
+metadata/Warp2 = ""
+metadata/Warp3 = ""
+metadata/NumWarps = 0
+metadata/Hot = false
+metadata/Cold = false
+metadata/Acid = false
+metadata/Rads = false
+metadata/MassRequired = 500000
+metadata/Owned = false
+metadata/Exausted = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -63.0
