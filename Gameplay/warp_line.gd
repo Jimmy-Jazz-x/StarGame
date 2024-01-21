@@ -12,7 +12,7 @@ func _process(_delta):
 	pass
 
 func _draw():
-	draw_line(Vector2(0,0),(get_meta("StarVector1") - get_meta("StarVector2")),Color.WHITE_SMOKE,8)
+	draw_line(Vector2(0,0),(get_meta("StarVector1") - get_meta("StarVector2")),Color.WHITE_SMOKE,4)
 	pass
 
 func get_link1():

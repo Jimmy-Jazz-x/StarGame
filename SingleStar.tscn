@@ -1,13 +1,25 @@
 [gd_scene load_steps=4 format=3 uid="uid://ec0iph0ca5l7"]
 
-[ext_resource type="Texture2D" uid="uid://baebhb6bp2gnj" path="res://icon.svg" id="1_5tuc0"]
+[ext_resource type="Texture2D" uid="uid://c0vwvw2vukqds" path="res://Textures/Node.png" id="1_mpgeq"]
 [ext_resource type="Script" path="res://SingleStar.gd" id="2_5l1w7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_80hh5"]
-radius = 162.012
+radius = 33.3766
 
-[node name="StarNode2D" type="Sprite2D"]
-texture = ExtResource("1_5tuc0")
+[node name="StarNode2D" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -608.0
+offset_top = -356.0
+offset_right = -544.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("2_5l1w7")
 metadata/IndexNum = 0
 metadata/StarName = ""
@@ -24,25 +36,63 @@ metadata/MassRequired = 500000
 metadata/Owned = false
 metadata/Exausted = false
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -63.0
-offset_top = -64.0
-offset_right = 63.0
-offset_bottom = 63.0
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+texture_normal = ExtResource("1_mpgeq")
 
-[node name="StarInfoLabel" type="Label" parent="."]
-offset_left = 67.0
-offset_top = -60.0
-offset_right = 447.0
-offset_bottom = 58.0
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -28.0
+offset_right = 27.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+mouse_filter = 2
 
 [node name="StarArea2D" type="Area2D" parent="."]
+position = Vector2(0, 1)
 
 [node name="StarCollisionShape2D" type="CollisionShape2D" parent="StarArea2D"]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_80hh5")
 
-[connection signal="focus_entered" from="TextureRect" to="." method="_on_texture_rect_focus_entered"]
-[connection signal="focus_exited" from="TextureRect" to="." method="_on_texture_rect_focus_exited"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -32.0
+offset_right = 580.0
+offset_bottom = 616.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlanetPicRectangle" type="TextureRect" parent="PanelContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="StarInfoLabel" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="mouse_entered" from="TextureRect" to="." method="_on_texture_rect_mouse_entered"]
 [connection signal="mouse_exited" from="TextureRect" to="." method="_on_texture_rect_mouse_exited"]
 [connection signal="body_entered" from="StarArea2D" to="." method="_on_area_2d_body_entered"]

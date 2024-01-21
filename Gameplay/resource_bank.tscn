@@ -52,6 +52,7 @@ text = "1000000"
 text_direction = 1
 
 [node name="RadsTechTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+layout_mode = 0
 offset_top = 342.0
 offset_right = 644.0
 offset_bottom = 370.0
@@ -67,6 +68,7 @@ text = "1000000"
 text_direction = 1
 
 [node name="AcidTechTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+layout_mode = 0
 offset_top = 285.0
 offset_right = 643.0
 offset_bottom = 313.0
@@ -82,6 +84,7 @@ text = "1000000"
 text_direction = 1
 
 [node name="ColdTechTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+layout_mode = 0
 offset_top = 228.0
 offset_right = 642.0
 offset_bottom = 256.0
@@ -97,6 +100,7 @@ text = "1000000"
 text_direction = 1
 
 [node name="HotTechTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+layout_mode = 0
 offset_top = 171.0
 offset_right = 642.0
 offset_bottom = 199.0
@@ -112,6 +116,7 @@ text = "1000000"
 text_direction = 1
 
 [node name="TotalMassTitle" type="RichTextLabel" parent="PanelContainer/Panel"]
+layout_mode = 0
 offset_top = 114.0
 offset_right = 642.0
 offset_bottom = 142.0
@@ -127,6 +132,7 @@ text = "1000000"
 text_direction = 1
 
 [node name="ProdTechLvl" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
 offset_left = 164.0
 offset_top = 462.0
 offset_right = 464.0
@@ -135,6 +141,7 @@ text = "1000000"
 text_direction = 1
 
 [node name="RepTechLvl" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
 offset_left = 183.0
 offset_top = 496.0
 offset_right = 483.0
@@ -150,6 +157,7 @@ offset_bottom = 85.0
 text = "Total Population:"
 
 [node name="TravelTechLvl" type="Label" parent="PanelContainer/Panel"]
+layout_mode = 0
 offset_left = 177.0
 offset_top = 531.0
 offset_right = 477.0
@@ -158,6 +166,7 @@ text = "1000000"
 text_direction = 1
 
 [node name="RepButton7" type="Button" parent="."]
+layout_mode = 0
 offset_left = -2.0
 offset_top = 492.0
 offset_right = 111.0
@@ -165,18 +174,21 @@ offset_bottom = 523.0
 text = "Buy Replication Tech"
 
 [node name="TravelButton6" type="Button" parent="."]
+layout_mode = 0
 offset_top = 525.0
 offset_right = 113.0
 offset_bottom = 556.0
 text = "Buy Travel Tech"
 
 [node name="ProdButton5" type="Button" parent="."]
+layout_mode = 0
 offset_top = 458.0
 offset_right = 113.0
 offset_bottom = 489.0
 text = "Buy Prod Tech"
 
 [node name="RadButton4" type="Button" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 369.0
 offset_right = 115.0
@@ -184,6 +196,7 @@ offset_bottom = 400.0
 text = "Buy Rad Tech"
 
 [node name="AcidButton3" type="Button" parent="."]
+layout_mode = 0
 offset_left = 3.0
 offset_top = 312.0
 offset_right = 118.0
@@ -191,6 +204,7 @@ offset_bottom = 343.0
 text = "Buy Acid Tech"
 
 [node name="ColdButton2" type="Button" parent="."]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 252.0
 offset_right = 115.0

@@ -40,7 +40,7 @@ func _ready():
 
 #Map Generation Create Warp Links
 	for child in $StarMapArea.get_children():
-		if child is Sprite2D:
+		if child is Control:
 			var closest1c
 			var closest2c
 			var closest3c

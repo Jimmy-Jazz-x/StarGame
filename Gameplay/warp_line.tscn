@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Gameplay/warp_line.gd" id="1_fory5"]
 
 [node name="Warp Line" type="Sprite2D"]
+z_index = -1
 centered = false
 script = ExtResource("1_fory5")
 metadata/StarLink1 = ""
@@ -23,4 +24,5 @@ offset_right = 30.5
 offset_bottom = 28.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 expand_mode = 1
