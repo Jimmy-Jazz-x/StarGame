@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxp2mlnc8khy0"]
+[gd_scene load_steps=9 format=3 uid="uid://cxp2mlnc8khy0"]
 
 [ext_resource type="Script" path="res://Gameplay/Map.gd" id="1_2bpvo"]
 [ext_resource type="Texture2D" uid="uid://bw250t685vlko" path="res://1920 SpaceBackgroup_TEMP.png" id="2_5ap4q"]
 [ext_resource type="PackedScene" uid="uid://ec0iph0ca5l7" path="res://SingleStar.tscn" id="3_ynm8u"]
 [ext_resource type="Script" path="res://Gameplay/Camera2D.gd" id="4_7u8ky"]
 [ext_resource type="PackedScene" uid="uid://frxr22m6gyx8" path="res://Gameplay/resource_bank.tscn" id="5_s40ur"]
+[ext_resource type="AudioStream" uid="uid://e8bnvfkbsfol" path="res://Audio/BackgroundMusic.2.mp3" id="6_ggsrb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6wvl"]
 texture = ExtResource("2_5ap4q")
@@ -8095,5 +8096,9 @@ wait_time = 5.0
 autostart = true
 
 [node name="MasterResourceBank" parent="." instance=ExtResource("5_s40ur")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ggsrb")
+autoplay = true
 
 [connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]

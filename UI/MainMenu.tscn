@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6pafpyhqut05"]
+[gd_scene load_steps=3 format=3 uid="uid://6pafpyhqut05"]
 
 [ext_resource type="Script" path="res://UI/MainMenu.gd" id="1_qm0a2"]
+[ext_resource type="AudioStream" uid="uid://b74bj1w8m5om2" path="res://Audio/MenuMusic.4.mp3" id="2_8c6g5"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -56,6 +57,10 @@ offset_left = -0.440063
 offset_top = -0.00999975
 offset_right = 67.5599
 offset_bottom = 41.99
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8c6g5")
+autoplay = true
 
 [connection signal="pressed" from="Play/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Exit/Button" to="." method="_on_exit_pressed"]
