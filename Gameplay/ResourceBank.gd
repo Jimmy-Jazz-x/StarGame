@@ -40,11 +40,11 @@ func set_techlvl(string,lvl):
 	pass
 func buy_techlvl(metaString):
 	var lvl = get_meta(metaString)
-<<<<<<< HEAD
-	var cost = (1000*(1+lvl) ** 4)
-=======
+	
+
 	var cost = (10000*(1+lvl) ** 4)
->>>>>>> 062be5a0472693ddddea5d918446b1551ade71ea
+	if (metaString)==("HotTechLvl") or (metaString)==("ColdTechLvl") or (metaString)==("AcidTechLvl") or (metaString)==("RadsTechLvl"):
+		cost = (3000000*(1+lvl) ** 4)
 	if Spend_Resource(cost):
 		set_techlvl(metaString,lvl+1)
 		get_node("PanelContainer/Panel/" + metaString).text = "Level: " + str(lvl+1) + " Cost: " + str(cost)
