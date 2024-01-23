@@ -167,7 +167,7 @@ func _draw() -> void:
 func Spawn_Player():
 	var NewPlayer = Player.instantiate()
 	$PlayerMapArea.add_child(NewPlayer)
-	NewPlayer.Spawn($StarMapArea.get_child(40),10000000)
+	NewPlayer.Spawn($StarMapArea.get_child(40),100000)
 	$StarMapArea.get_child(40).set_meta("Hot",false)
 	$StarMapArea.get_child(40).set_meta("Cold",false)
 	$StarMapArea.get_child(40).set_meta("Acid",false)
