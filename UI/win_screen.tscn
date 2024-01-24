@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0liygl4uoqcc"]
 
-[ext_resource type="AudioStream" uid="uid://bh0daajgpt4ho" path="res://Audio/LoseFanfare.0.mp3" id="1_8nqat"]
+[ext_resource type="AudioStream" uid="uid://dgfm8prjb7e45" path="res://Audio/LoseFanfare.0.mp3" id="1_8nqat"]
 
 [node name="Win Screen" type="Control"]
 layout_mode = 3
