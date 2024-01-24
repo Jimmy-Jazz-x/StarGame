@@ -9,7 +9,7 @@ func get_poplation():
 	return get_meta("Population")
 func set_poplation(Bots):
 	set_meta("Population",Bots)
-	$PopLabel.text = str(Bots)
+	$PopLabel.text = str(thousands_sep(int(Bots)))
 	pass
 func replicate():
 	set_poplation(get_poplation() * \
@@ -152,3 +152,19 @@ func _physics_process(_delta):
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 #
 	#move_and_slide()
+static func thousands_sep(number, prefix=''):
+	number = int(number)
+	var neg = false
+	if number < 0:
+		number = -number
+		neg = true
+	var string = str(number)
+	var mod = string.length() % 3
+	var res = ""
+	for i in range(0, string.length()):
+		if i != 0 && i % 3 == mod:
+			res += ","
+		res += string[i]
+	if neg: res = '-'+prefix+res
+	else: res = prefix+res
+	return res

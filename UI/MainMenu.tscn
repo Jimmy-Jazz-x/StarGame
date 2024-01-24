@@ -23,47 +23,55 @@ autoplay = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Game title" type="Label" parent="CanvasLayer"]
-offset_left = 1.0
-offset_top = 165.0
-offset_right = 1153.0
-offset_bottom = 195.0
+anchors_preset = -1
+anchor_left = 0.000868056
+anchor_top = 0.25463
+anchor_right = 1.00087
+anchor_bottom = 0.300926
+offset_top = -1.52588e-05
+offset_bottom = -1.52588e-05
 text = "Star Exploiter"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Label" parent="CanvasLayer"]
-offset_left = -1.0
-offset_top = 429.0
-offset_right = 1151.0
-offset_bottom = 459.0
+anchors_preset = -1
+anchor_left = -0.000868056
+anchor_top = 0.662037
+anchor_right = 0.999132
+anchor_bottom = 0.708333
 text = "Exit"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer/Exit"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.47
-anchor_top = -0.233
-anchor_right = 0.47
-anchor_bottom = -0.233
-offset_left = -0.440063
-offset_top = -0.00999975
-offset_right = 67.5599
-offset_bottom = 41.99
+anchor_left = 0.469618
+anchor_top = -0.233333
+anchor_right = 0.528646
+anchor_bottom = 1.16667
+metadata/_edit_use_anchors_ = true
 
 [node name="Play" type="Label" parent="CanvasLayer"]
-offset_left = 2.0
-offset_top = 330.0
-offset_right = 1154.0
-offset_bottom = 360.0
+anchors_preset = -1
+anchor_left = 0.00173611
+anchor_top = 0.509259
+anchor_right = 1.00174
+anchor_bottom = 0.555556
+offset_top = -3.05176e-05
+offset_bottom = -3.05176e-05
 text = "Play"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer/Play"]
 layout_mode = 0
-offset_left = 527.0
-offset_top = -7.0
-offset_right = 624.0
-offset_bottom = 36.0
+anchor_left = 0.457465
+anchor_top = -0.233333
+anchor_right = 0.541667
+anchor_bottom = 1.2
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 z_index = -1
