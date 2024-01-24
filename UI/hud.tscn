@@ -26,10 +26,13 @@ expand_mode = 3
 
 [node name="PanelContainer1" type="PanelContainer" parent="."]
 layout_mode = 2
-offset_left = 2.0
-offset_top = 506.0
-offset_right = 142.0
-offset_bottom = 525.0
+anchor_left = 0.00173611
+anchor_top = 0.780864
+anchor_right = 0.123264
+anchor_bottom = 0.810185
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="HotButton" type="Button" parent="PanelContainer1"]
 layout_mode = 2
@@ -47,10 +50,11 @@ theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer4" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 566.0
-offset_right = 142.0
-offset_bottom = 585.0
+anchor_left = 0.00173611
+anchor_top = 0.873457
+anchor_right = 0.123264
+anchor_bottom = 0.902778
+metadata/_edit_use_anchors_ = true
 
 [node name="RadButton" type="Button" parent="PanelContainer4"]
 layout_mode = 2
@@ -69,10 +73,11 @@ theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 layout_mode = 2
-offset_left = 2.0
-offset_top = 526.0
-offset_right = 142.0
-offset_bottom = 545.0
+anchor_left = 0.00173611
+anchor_top = 0.811728
+anchor_right = 0.123264
+anchor_bottom = 0.841049
+metadata/_edit_use_anchors_ = true
 
 [node name="ColdButton" type="Button" parent="PanelContainer2"]
 layout_mode = 2
@@ -90,10 +95,11 @@ theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 546.0
-offset_right = 142.0
-offset_bottom = 565.0
+anchor_left = 0.00173611
+anchor_top = 0.842593
+anchor_right = 0.123264
+anchor_bottom = 0.871914
+metadata/_edit_use_anchors_ = true
 
 [node name="AcidButton" type="Button" parent="PanelContainer3"]
 layout_mode = 2
@@ -111,10 +117,11 @@ theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer5" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 151.0
-offset_top = 507.0
-offset_right = 298.0
-offset_bottom = 526.0
+anchor_left = 0.131076
+anchor_top = 0.782407
+anchor_right = 0.258681
+anchor_bottom = 0.811728
+metadata/_edit_use_anchors_ = true
 
 [node name="ProdButton" type="Button" parent="PanelContainer5"]
 layout_mode = 2
@@ -132,10 +139,11 @@ theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer6" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 151.0
-offset_top = 527.0
-offset_right = 298.0
-offset_bottom = 546.0
+anchor_left = 0.131076
+anchor_top = 0.813272
+anchor_right = 0.258681
+anchor_bottom = 0.842593
+metadata/_edit_use_anchors_ = true
 
 [node name="RepButton" type="Button" parent="PanelContainer6"]
 layout_mode = 2
@@ -153,10 +161,11 @@ theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer7" type="PanelContainer" parent="."]
 layout_mode = 2
-offset_left = 151.0
-offset_top = 547.0
-offset_right = 298.0
-offset_bottom = 566.0
+anchor_left = 0.131076
+anchor_top = 0.844136
+anchor_right = 0.258681
+anchor_bottom = 0.873457
+metadata/_edit_use_anchors_ = true
 
 [node name="TravelButton" type="Button" parent="PanelContainer7"]
 layout_mode = 2
@@ -174,11 +183,12 @@ theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_left = 854.0
-offset_top = 438.0
-offset_right = 1143.0
-offset_bottom = 634.0
+anchor_left = 0.741319
+anchor_top = 0.675926
+anchor_right = 0.992188
+anchor_bottom = 0.978395
 columns = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="MassLabel" type="Label" parent="GridContainer"]
 layout_mode = 2
