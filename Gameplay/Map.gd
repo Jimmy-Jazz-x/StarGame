@@ -27,7 +27,7 @@ func _ready():
 			var pY = a * p * sin(p+(PI*arm))+(randf()*offset)
 			pX=pX*50
 			pY=pY*50
-			print(str(pX) + " | " + str(pY))
+			#print(str(pX) + " | " + str(pY))
 			var Stars = [Star1,Star2,Star3]
 			var kinds = Stars[randi()% Stars.size()]
 			var TheStar = kinds.instantiate()
@@ -47,7 +47,7 @@ func _ready():
 			var closest1 = 1000000000000000.0
 			var closest2 = 1000000000000000.0
 			var closest3 = 1000000000000000.0			
-			print(child.get_meta("StarName") +"|" )
+			#print(child.get_meta("StarName") +"|" )
 			
 			if child.get_child_count() < 80:
 				var rdi = randi_range(3,3)
@@ -60,20 +60,20 @@ func _ready():
 						if tempPos < closest1:
 							closest1 = tempPos
 							closest1c = child2
-							print("Set1")
+							#print("Set1")
 						elif tempPos < closest2:
 							closest2 = tempPos
 							closest2c = child2
-							print("Set2")
+							#print("Set2")
 						elif  tempPos < closest3:
 							closest3 = tempPos
 							closest3c = child2
-							print("Set3")
+							#print("Set3")
 					#end of Inner For
 				print("Ready for Links")
-				print(closest1c.get_meta("StarName"))
-				print(closest2c.get_meta("StarName"))
-				print(closest3c.get_meta("StarName"))
+				#print(closest1c.get_meta("StarName"))
+				#print(closest2c.get_meta("StarName"))
+				#print(closest3c.get_meta("StarName"))
 				#child.add_child(newWarp)
 				#newWarp.position = child.position
 				#draw_line(child.position,closest1c.position,Color.WHITE,80)
@@ -140,7 +140,7 @@ func _ready():
 							closest3c.set_meta("NumWarps",3)
 						
 					newWarp.draw
-					
+
 				
 				
 				
@@ -152,7 +152,7 @@ func _ready():
 	#If Not Linked then Add Link Entry to Array for Both Planets
 	#Draw Line starting at Planet 1 going to Planet 2
 	
-	
+	remove_overlap()
 	Spawn_Player()
 	
 	pass # Replace with function body.
@@ -199,3 +199,16 @@ func has_won():
 			won = false
 	return won
 	
+
+
+
+func remove_overlap():
+	var moved = true
+	while moved:
+		moved = false
+		for Stars in $StarMapArea.get_children():
+			for Star2 in $StarMapArea.get_children():
+				if Stars.position.distance_squared_to(Star2.position) <=400 and Stars.position.distance_squared_to(Star2.position) != 0:
+					Stars.position = Stars.position + Vector2(randi_range(50,500),randi_range(50,500))
+					moved = true
+

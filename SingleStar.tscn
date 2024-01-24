@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c0vwvw2vukqds" path="res://Textures/Node.png" id="1_mpgeq"]
 [ext_resource type="Script" path="res://SingleStar.gd" id="2_5l1w7"]
-[ext_resource type="Texture2D" uid="uid://bldcg7m66s7av" path="res://Textures/Node Selected.png" id="3_dihpy"]
+[ext_resource type="Texture2D" uid="uid://dyo2qh75p8oe" path="res://Textures/Node Selected.png" id="3_dihpy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_80hh5"]
 radius = 33.3766
@@ -23,7 +23,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("2_5l1w7")
 metadata/IndexNum = 0
-metadata/StarName = ""
+metadata/StarName = "Star System Index:"
 metadata/Mass = 0.0
 metadata/Warp1 = ""
 metadata/Warp2 = ""
@@ -71,7 +71,7 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_80hh5")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-visible = false
+z_index = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -12,8 +12,9 @@ func set_poplation(Bots):
 	$PopLabel.text = str(thousands_sep(int(Bots)))
 	pass
 func replicate():
-	set_poplation(get_poplation() * \
-	(1+$/root/Map/MasterResourceBank.ReplicationRate(get_node(str("/root/Map/StarMapArea/" + get_meta("StarName"))))))
+	if not get_node(str("/root/Map/StarMapArea/" + get_meta("StarName"))).Is_Exausted:
+		set_poplation(get_poplation() * \
+		(1+$/root/Map/MasterResourceBank.ReplicationRate(get_node(str("/root/Map/StarMapArea/" + get_meta("StarName"))))))
 	pass
 
 
