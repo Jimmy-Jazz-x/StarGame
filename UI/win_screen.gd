@@ -7,15 +7,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
 	pass
 
 
-func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Gameplay/Map.tscn")
-	pass # Replace with function body.
-
-
-func _on_exit_pressed():
-	get_tree().quit()
+func _on_texture_button_pressed():
+	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
 	pass # Replace with function body.

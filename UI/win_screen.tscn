@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0liygl4uoqcc"]
+[gd_scene load_steps=4 format=3 uid="uid://b0liygl4uoqcc"]
 
-[ext_resource type="AudioStream" uid="uid://dgfm8prjb7e45" path="res://Audio/LoseFanfare.0.mp3" id="1_8nqat"]
+[ext_resource type="Script" path="res://UI/win_screen.gd" id="1_ayk1y"]
+[ext_resource type="AudioStream" uid="uid://h7naw5j4nby1" path="res://Audio/WinFanfare.mp3" id="2_ajgrq"]
+[ext_resource type="Texture2D" uid="uid://bf5ga8lhsyv2o" path="res://Textures/Victory Screen.png" id="3_rggqe"]
 
 [node name="Win Screen" type="Control"]
 layout_mode = 3
@@ -9,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ayk1y")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -24,4 +27,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_8nqat")
+stream = ExtResource("2_ajgrq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_rggqe")
+
+[connection signal="pressed" from="CanvasLayer/TextureButton" to="." method="_on_texture_button_pressed"]
