@@ -44,7 +44,7 @@ func buy_techlvl(metaString):
 
 	var cost = (10000*(1+lvl) ** 4)
 	if (metaString)==("HotTechLvl") or (metaString)==("ColdTechLvl") or (metaString)==("AcidTechLvl") or (metaString)==("RadsTechLvl"):
-		cost = (3000000*(1+lvl) ** 4)
+		cost = (5000000*(1+lvl) ** 3)
 	if Spend_Resource(cost):
 		set_techlvl(metaString,lvl+1)
 		get_node("PanelContainer/Panel/" + metaString).text = "Level: " + str(lvl+1) + " Cost: " + str(cost)
@@ -54,26 +54,27 @@ func buy_techlvl(metaString):
 func MiningRate(Planet,pop):
 	var Rate = 1.00
 	if Planet.get_meta("Hot"):
-		Rate = Rate + 1*get_techlvl("HotTechLvl")
+		Rate = Rate + 1.5*get_techlvl("HotTechLvl")
 	if Planet.get_meta("Cold"):
-		Rate = Rate + 1*get_techlvl("ColdTechLvl")
+		Rate = Rate + 1.5*get_techlvl("ColdTechLvl")
 	if Planet.get_meta("Acid"):
-		Rate = Rate + 1*get_techlvl("AcidTechLvl")
+		Rate = Rate + 1.5*get_techlvl("AcidTechLvl")
 	if Planet.get_meta("Rads"):
-		Rate = Rate + 1*get_techlvl("RadsTechLvl")
+		Rate = Rate + 1.5*get_techlvl("RadsTechLvl")
+	Rate = Rate * (0.10 * get_techlvl("ProdTechLvl"))
 	Rate = Rate * pop
 	return Rate
 
 func ReplicationRate(Planet):
 	var Rate = 0.1
 	if Planet.get_meta("Hot"):
-		Rate = Rate + 0.001*get_techlvl("HotTechLvl")
+		Rate = Rate + 0.01*get_techlvl("HotTechLvl")
 	if Planet.get_meta("Cold"):
-		Rate = Rate + 0.001*get_techlvl("ColdTechLvl")
+		Rate = Rate + 0.01*get_techlvl("ColdTechLvl")
 	if Planet.get_meta("Acid"):
-		Rate = Rate + 0.001*get_techlvl("AcidTechLvl")
+		Rate = Rate + 0.01*get_techlvl("AcidTechLvl")
 	if Planet.get_meta("Rads"):
-		Rate = Rate + 0.001*get_techlvl("RadsTechLvl")
+		Rate = Rate + 0.01*get_techlvl("RadsTechLvl")
 		
 	Rate = Rate * (0.2 * get_techlvl("RepTechLvl"))
 	return Rate
