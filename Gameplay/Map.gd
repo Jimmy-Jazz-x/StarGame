@@ -184,6 +184,7 @@ func _on_tick_timeout():
 	print("Tick")
 	for Players in $PlayerMapArea.get_children():
 		Players.Update()
+	$CanvasLayer2/HUD.Update_Hud()
 	if has_won():
 		$Tick.stop()
 		get_tree().change_scene_to_file("res://UI/win_screen.tscn")
