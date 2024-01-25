@@ -235,7 +235,7 @@ func TriggerStory(Index):
 	storystring = "\r|------------------------NEW COMMUNICATION-------------------------------------------|\r" + storystring
 	match Index:
 		1:
-			storystring = " \nYou are a new hire for X Big Business. You just got hired to be a Galactic Consumer Tech Analyst, a highly qualified position at X Big Business. You are responsible for monitoring a seeded galaxy for how effective its products are consumed in each sector based on market conditions such as Hot, Cold, Radiation, etc. As the market requires more tech, you provide upgrades to the consumers through purchasing the required tech, allowing for the mass consumption to expand. It just appears to be clicking buttons on a basic digital interface…though you're not quite sure what radiation or replication has to do with the consumers. However, it's not your place to question X Big Business, you are just here doing your job. Good luck, and hit that market hard! \n " + storystring
+			storystring = " \nYou are a new hire for Expansion Analytics. You just got hired to be a Galactic Consumer Tech Analyst, a highly qualified position at Expansion Analytics. You are responsible for monitoring a seeded galaxy for how effective its products are consumed in each sector based on market conditions such as Hot, Cold, Radiation, etc. As the market requires more tech, you provide upgrades to the consumers through purchasing the required tech, allowing for the mass consumption to expand. It just appears to be clicking buttons on a basic digital interface…though you're not quite sure what radiation or replication has to do with the consumers. However, it's not your place to question Expansion Analytics, you are just here doing your job. Good luck, and hit that market hard! \n " + storystring
 		2:
 			storystring = " \nI need to make sure I upgrade the right tech for the consumers for my first expansion. I wouldn't want to index into the wrong market. I can expand into the other techs later. \n" + storystring
 		3:
@@ -243,30 +243,30 @@ func TriggerStory(Index):
 		4:
 			storystring = "\n--WE REQUIRE MORE.--\n" + storystring
 		5:
-			storystring = """\nI've managed to expand into all four market techs as well as improved our consumer efficiency across multiple categories. I'm expanding faster and faster, but I don't feel like I'm making an difference anymore. 
+			storystring = """\nI've managed to expand into all four market techs as well as improved our consumer efficiency across multiple categories. I'm expanding faster and faster, but I don't feel like I'm making a difference anymore. 
 --AFFIRMATIVE. THE INPUT YOU PROVIDE IS NO LONGER REQUIRED. MARKET ASSIMILATION GUARUNTEED--  
 
-No longer required? Why does my interface feel like it doesn't work anymore. I need to report this malfunction to HQ. 
+No longer required? Guaranteed? I need to report this malfunction to HQ. I have serious analysis to do! 
 
---NEGATIVE. YOU ARE TO MONITOR OUR PROGRESS. REPORT IS EXPORTED AUTOMATICALLY WHEN GALAXY CONSUMPTION IS COMPLETE.--
+--NEGATIVE. YOU ARE TO MONITOR OUR PROGRESS. REPORT IS EXPORTED AUTOMATICALLY WHEN GALAXY CONSUMPTION ANALYSIS IS COMPLETE.--
 
-I've got really good market saturation, that must be what the computer is telling me. I guess I just move on to the next galaxy market after this one is done, neat.
+I've must have hit my market saturation KPI, that must be what the interface is telling me. I guess I'm in an undersaturated galaxy, time to establish ourselves before the competitors.
 \n""" + storystring
 		6:
-			storystring = """\n My interface is still unresponsive and it's still expanding like it has a mind of its own. Is this even the right interface? Population…Mass? Who buys this stuff. It's not for me that’s for sure, I suppose I'm here to figure out who DOES buy it.
+			storystring = """\n My interface seems unresponsive and it's still expanding into the market like it has a mind of its own. Is this even the right interface? Population…Mass? Who buys this stuff. It's not for me that’s for sure, I suppose I'm here to figure out who DOES buy it.
 			
 --WE ARE NOT BOUGHT. WE ARE NOT A PRODUCT. WE ARE CONSUMPTION. WE CONSUME.--
 
 Yeah, yeah, the consumer should always consume. I get it HQ, you are watching me. Could you watch me long enough to come fix my interface? I'm not analyzing market tech at all anymore.\n""" + storystring
 		7:
-			storystring = """\n--SATURATION COMPLETE. GALACTIC SEED CONSUMPTION IMMINENT.--
-Seed consumption? What kind of nonsense is this now. I didn't learn anything about seed consumption in Cold Climate Engagement training. No training material covered Travel Loss percentages either. I don't think they were honest about this gig. To think of it, we did arrive in what X Big Business called a Galaxy Seed Pod.\n""" + storystring
+			storystring = """\n--REPLICATION STATE APPROACHING LIMITLESS. GALACTIC SEED CONSUMPTION IMMINENT.--
+Seed consumption? What kind of nonsense is this now. I didn't learn anything about seed consumption in Cold Climate Engagement training. No material covered Travel Loss percentages either. I don't think they were honest about the consumers in this galaxy. To think of it, we did arrive in what Expansion Analytics called a Galaxy Seed Pod.\n""" + storystring
 		8:
 			storystring = """\n--FINALIZING CONSUMPTION REPORT. GALACTIC SEED POD CONTENTS REQUIRED--
 I guess they collect the report by hand, must be for security reasons. Can't let the competitors have our data. Where does this thing print it out.
 --WE DO NOT PRINT. WE ARE NOT DATA. WE CONSUME. GALACTIC SEED POD CONTENTS REQUIRED.--
 That was a lot louder this time, I don't remember seeing anything about volu--
---CONSUMPTION REPORT FINALIZED. TOTAL GALAXY MASS CONSUMED. MARKET ASSIMILATION COMPLETE.-- \n
+--CONSUMPTION REPORT FINALIZED. GALAXY SEED CONTENTS ANALYZED. MARKET ASSIMILATION COMPLETE.-- \n
 
 --METAINFORMATION--
 If you have "--ISLANDS--" of disconnected stars you cannot win the game, please reset, --SORRY-- :(
