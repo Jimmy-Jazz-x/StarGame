@@ -49,7 +49,7 @@ func buy_techlvl(metaString):
 		set_techlvl(metaString,lvl+1)
 		get_node("PanelContainer/Panel/" + metaString).text = "Level: " + str(lvl+1) + " Cost: " + str(cost)
 	if (metaString)==("HotTechLvl") or (metaString)==("ColdTechLvl") or (metaString)==("AcidTechLvl") or (metaString)==("RadsTechLvl"):
-		if get_techlvl("HotTechLvl") >=1 and get_techlvl("ColdTechLvl") >=1 and get_techlvl("AcidTechLvl") >=1 and get_techlvl("RadsTechLvl") >=1:
+		if get_techlvl("HotTechLvl") >=1 and get_techlvl("ColdTechLvl") >=1 and get_techlvl("AcidTechLvl") >=1 and get_techlvl("RadsTechLvl") >=1 and $/root/Map.Lategame == false:
 			$/root/Map.Lategame = true
 			$/root/Map.TriggerStory(5)
 

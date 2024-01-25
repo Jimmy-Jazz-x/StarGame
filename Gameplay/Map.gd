@@ -268,7 +268,8 @@ I guess they collect the report by hand, must be for security reasons. Can't let
 That was a lot louder this time, I don't remember seeing anything about volu--
 --CONSUMPTION REPORT FINALIZED. TOTAL GALAXY MASS CONSUMED. MARKET ASSIMILATION COMPLETE.-- \n
 
-METAINFORMATION: if you have "islands" of disconnected stars you cannot win the game, please reset, sorry :(
+--METAINFORMATION--
+If you have "--ISLANDS--" of disconnected stars you cannot win the game, please reset, --SORRY-- :(
 """ + storystring
 		9:
 			storystring = "\n\n" + storystring
