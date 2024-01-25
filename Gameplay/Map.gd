@@ -232,7 +232,7 @@ func remove_overlap():
 					
 func TriggerStory(Index):
 	var storystring = $CanvasLayer2/HUD/ScrollContainer/Label.text
-	
+	storystring = "\r|------------------------NEW COMMUNICATION-------------------------------------------|\r" + storystring
 	match Index:
 		1:
 			storystring = " \nYou are a new hire for X Big Business. You just got hired to be a Galactic Consumer Tech Analyst, a highly qualified position at X Big Business. You are responsible for monitoring a seeded galaxy for how effective its products are consumed in each sector based on market conditions such as Hot, Cold, Radiation, etc. As the market requires more tech, you provide upgrades to the consumers through purchasing the required tech, allowing for the mass consumption to expand. It just appears to be clicking buttons on a basic digital interface…though you're not quite sure what radiation or replication has to do with the consumers. However, it's not your place to question X Big Business, you are just here doing your job. Good luck, and hit that market hard! \n " + storystring
@@ -274,5 +274,5 @@ METAINFORMATION: if you have "islands" of disconnected stars you cannot win the 
 			storystring = "\n\n" + storystring
 		10:
 			storystring = "\n\n" + storystring
-		
+	$AudioStreamPlayer2.play()
 	$CanvasLayer2/HUD/ScrollContainer/Label.text = storystring

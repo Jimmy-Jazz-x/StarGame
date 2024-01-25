@@ -75,47 +75,47 @@ static func thousands_sep(number, prefix=''):
 func _on_hot_button_pressed():
 	RB.buy_techlvl("HotTechLvl")
 	Update_Hud()
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
 func _on_rad_button_pressed():
 	RB.buy_techlvl("RadsTechLvl")
 	Update_Hud()
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
 func _on_cold_button_pressed():
 	RB.buy_techlvl("ColdTechLvl")
 	Update_Hud()
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
 func _on_acid_button_pressed():
 	RB.buy_techlvl("AcidTechLvl")
 	Update_Hud()
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
 func _on_prod_button_pressed():
 	RB.buy_techlvl("ProdTechLvl")
 	Update_Hud()
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
 func _on_rep_button_pressed():
 	RB.buy_techlvl("RepTechLvl")
 	Update_Hud()
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	pass # Replace with function body.
 
 
 func _on_travel_button_pressed():
 	RB.buy_techlvl("TravelTechLvl")
 	Update_Hud()
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	pass # Replace with function body.
