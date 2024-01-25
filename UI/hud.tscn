@@ -27,10 +27,10 @@ expand_mode = 3
 
 [node name="PanelContainer1" type="PanelContainer" parent="."]
 layout_mode = 2
-anchor_left = 0.00173611
-anchor_top = 0.780864
-anchor_right = 0.123264
-anchor_bottom = 0.810185
+anchor_left = 0.000868056
+anchor_top = 0.765432
+anchor_right = 0.116319
+anchor_bottom = 0.802469
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -40,21 +40,20 @@ layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "Allows you to mine \"HOT\" Planets"
 theme_override_fonts/font = ExtResource("2_en3gr")
-theme_override_font_sizes/font_size = 10
 text = "Buy Hot Tech"
 
 [node name="TechLabel" type="Label" parent="PanelContainer1"]
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer4" type="PanelContainer" parent="."]
-layout_mode = 0
-anchor_left = 0.00173611
-anchor_top = 0.873457
-anchor_right = 0.123264
-anchor_bottom = 0.902778
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.117188
+anchor_top = 0.804012
+anchor_right = 0.260417
+anchor_bottom = 0.841049
 metadata/_edit_use_anchors_ = true
 
 [node name="RadButton" type="Button" parent="PanelContainer4"]
@@ -63,20 +62,18 @@ size_flags_horizontal = 0
 tooltip_text = "Allows you to mine \"RADIATION\" Planets
 "
 theme_override_fonts/font = ExtResource("2_en3gr")
-theme_override_font_sizes/font_size = 10
-text = "Buy Radiation Tech"
+text = "Buy Rad Resist"
 
 [node name="TechLabel" type="Label" parent="PanelContainer4"]
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 layout_mode = 2
-anchor_left = 0.00173611
-anchor_top = 0.811728
-anchor_right = 0.123264
+anchor_left = 0.000868056
+anchor_top = 0.804012
+anchor_right = 0.116319
 anchor_bottom = 0.841049
 metadata/_edit_use_anchors_ = true
 
@@ -85,21 +82,20 @@ layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "Allows you to Mine \"COLD\" Planets"
 theme_override_fonts/font = ExtResource("2_en3gr")
-theme_override_font_sizes/font_size = 10
 text = "Buy Cold Tech"
 
 [node name="TechLabel" type="Label" parent="PanelContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer3" type="PanelContainer" parent="."]
-layout_mode = 0
-anchor_left = 0.00173611
-anchor_top = 0.842593
-anchor_right = 0.123264
-anchor_bottom = 0.871914
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.117188
+anchor_top = 0.765432
+anchor_right = 0.260417
+anchor_bottom = 0.802469
 metadata/_edit_use_anchors_ = true
 
 [node name="AcidButton" type="Button" parent="PanelContainer3"]
@@ -107,21 +103,20 @@ layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "Allows you to mine \"ACID\" Planets"
 theme_override_fonts/font = ExtResource("2_en3gr")
-theme_override_font_sizes/font_size = 10
-text = "Buy Acid Resistance"
+text = "Buy Acid Resist"
 
 [node name="TechLabel" type="Label" parent="PanelContainer3"]
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer5" type="PanelContainer" parent="."]
-layout_mode = 0
-anchor_left = 0.131076
-anchor_top = 0.782407
-anchor_right = 0.258681
-anchor_bottom = 0.811728
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00173611
+anchor_top = 0.91358
+anchor_right = 0.229167
+anchor_bottom = 0.950617
 metadata/_edit_use_anchors_ = true
 
 [node name="ProdButton" type="Button" parent="PanelContainer5"]
@@ -129,21 +124,20 @@ layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "This Tech Changes how much mass your bots Mine each tick"
 theme_override_fonts/font = ExtResource("2_en3gr")
-theme_override_font_sizes/font_size = 10
 text = "Buy Productivity Tech"
 
 [node name="TechLabel" type="Label" parent="PanelContainer5"]
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer6" type="PanelContainer" parent="."]
-layout_mode = 0
-anchor_left = 0.131076
-anchor_top = 0.813272
-anchor_right = 0.258681
-anchor_bottom = 0.842593
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00173611
+anchor_top = 0.955247
+anchor_right = 0.229167
+anchor_bottom = 0.992284
 metadata/_edit_use_anchors_ = true
 
 [node name="RepButton" type="Button" parent="PanelContainer6"]
@@ -151,21 +145,19 @@ layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "Buying Replication Tech Increases the Rate which your Bots Passively replicate Each Tick"
 theme_override_fonts/font = ExtResource("2_en3gr")
-theme_override_font_sizes/font_size = 10
 text = "Buy Replication Tech"
 
 [node name="TechLabel" type="Label" parent="PanelContainer6"]
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="PanelContainer7" type="PanelContainer" parent="."]
 layout_mode = 2
-anchor_left = 0.131076
-anchor_top = 0.844136
-anchor_right = 0.258681
-anchor_bottom = 0.873457
+anchor_left = 0.00173611
+anchor_top = 0.873457
+anchor_right = 0.228299
+anchor_bottom = 0.910494
 metadata/_edit_use_anchors_ = true
 
 [node name="TravelButton" type="Button" parent="PanelContainer7"]
@@ -173,13 +165,11 @@ layout_mode = 2
 size_flags_horizontal = 0
 tooltip_text = "When Spreading to new Planets Each Rank Keeps 2% more Travelers Alive for the Landing"
 theme_override_fonts/font = ExtResource("2_en3gr")
-theme_override_font_sizes/font_size = 10
 text = "Buy Travel Tech"
 
 [node name="TechLabel" type="Label" parent="PanelContainer7"]
 layout_mode = 2
 size_flags_horizontal = 8
-size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_en3gr")
 
 [node name="GridContainer" type="GridContainer" parent="."]
@@ -253,6 +243,23 @@ text = "1%"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_xlxok")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.276042
+anchor_top = 0.817901
+anchor_right = 0.722222
+anchor_bottom = 0.986111
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_en3gr")
+autowrap_mode = 3
 
 [connection signal="pressed" from="PanelContainer1/HotButton" to="." method="_on_hot_button_pressed"]
 [connection signal="pressed" from="PanelContainer4/RadButton" to="." method="_on_rad_button_pressed"]

@@ -7,7 +7,7 @@ var Warpline = preload("res://Gameplay/warp_line.tscn")
 var Player = preload("res://Gameplay/player_body_2d.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var Number_of_Stars = rng.randi_range(45,80)
+	var Number_of_Stars = rng.randi_range(70,150)
 	print(Number_of_Stars)
 
 	#for n in range(1,Number_of_Stars):
@@ -37,7 +37,7 @@ func _ready():
 			TheStar.set_mass(10000000.00)
 			$StarMapArea.add_child(TheStar)
 			i = i + 1
-
+	remove_overlap()
 #Map Generation Create Warp Links
 	for child in $StarMapArea.get_children():
 		if child is Control:
@@ -152,9 +152,9 @@ func _ready():
 	#If Not Linked then Add Link Entry to Array for Both Planets
 	#Draw Line starting at Planet 1 going to Planet 2
 	
-	remove_overlap()
-	Spawn_Player()
 	
+	Spawn_Player()
+	TriggerStory(1)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -172,6 +172,7 @@ func Spawn_Player():
 	$StarMapArea.get_child(40).set_meta("Cold",false)
 	$StarMapArea.get_child(40).set_meta("Acid",false)
 	$StarMapArea.get_child(40).set_meta("Rads",false)
+	$CanvasLayer/MainCam2D.position = $StarMapArea.get_child(40).position
 	pass
 
 	
@@ -211,4 +212,31 @@ func remove_overlap():
 				if Stars.position.distance_squared_to(Star2.position) <=400 and Stars.position.distance_squared_to(Star2.position) != 0:
 					Stars.position = Stars.position + Vector2(randi_range(50,500),randi_range(50,500))
 					moved = true
-
+					
+					
+func TriggerStory(Index):
+	var storystring = $CanvasLayer2/HUD/ScrollContainer/Label.text
+	
+	match Index:
+		1:
+			storystring = "You are a new hire for X Big Business. You just got hired to be a Galactic Consumer Tech Analyst, a highly qualified position at X Big Business. You are responsible for monitoring a seeded galaxy for how effective its products are consumed in each sector based on market conditions such as Hot, Cold, Radiation, etc. As the market requires more tech, you provide upgrades to the consumers through purchasing the required tech, allowing for the mass consumption to expand. It just appears to be clicking buttons on a basic digital interface…though you're not quite sure what radiation or replication has to do with the consumers. However, it's not your place to question X Big Business, you are just here doing your job. Good luck, and hit that market hard!\n\n" + storystring
+		2:
+			storystring = "\n\n" + storystring
+		3:
+			storystring = "\n\n" + storystring
+		4:
+			storystring = "\n\n" + storystring
+		5:
+			storystring = "\n\n" + storystring
+		6:
+			storystring = "\n\n" + storystring
+		7:
+			storystring = "\n\n" + storystring
+		8:
+			storystring = "\n\n" + storystring
+		9:
+			storystring = "\n\n" + storystring
+		10:
+			storystring = "\n\n" + storystring
+		
+	$CanvasLayer2/HUD/ScrollContainer/Label.text = storystring
