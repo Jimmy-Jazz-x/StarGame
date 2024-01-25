@@ -1,4 +1,7 @@
 extends Node2D
+var tickcounter = 0
+var lategamecounter = 0
+var Lategame = false
 var rng = RandomNumberGenerator.new()
 var Star1 = preload("res://SingleStar.tscn")
 var Star2 = preload("res://SingleStar.tscn")
@@ -182,7 +185,10 @@ func Spawn_Player():
 
 func _on_tick_timeout():
 	
-	print("Tick")
+	print("Tick" + str(tickcounter))
+	tickcounter += 1
+	if Lategame == true:
+		lategamecounter += 1
 	for Players in $PlayerMapArea.get_children():
 		Players.Update()
 	$CanvasLayer2/HUD.Update_Hud()
@@ -190,6 +196,16 @@ func _on_tick_timeout():
 		$Tick.stop()
 		get_tree().change_scene_to_file("res://UI/win_screen.tscn")
 	pass # Replace with function body.
+	if tickcounter == 25:
+		TriggerStory(2)
+	if tickcounter == 90:
+		TriggerStory(4)
+	if lategamecounter == 45:
+		TriggerStory(6)
+	if lategamecounter == 75:
+		TriggerStory(7)
+	if lategamecounter == 100:
+		TriggerStory(8)
 
 
 func has_won():
@@ -219,21 +235,41 @@ func TriggerStory(Index):
 	
 	match Index:
 		1:
-			storystring = "You are a new hire for X Big Business. You just got hired to be a Galactic Consumer Tech Analyst, a highly qualified position at X Big Business. You are responsible for monitoring a seeded galaxy for how effective its products are consumed in each sector based on market conditions such as Hot, Cold, Radiation, etc. As the market requires more tech, you provide upgrades to the consumers through purchasing the required tech, allowing for the mass consumption to expand. It just appears to be clicking buttons on a basic digital interface…though you're not quite sure what radiation or replication has to do with the consumers. However, it's not your place to question X Big Business, you are just here doing your job. Good luck, and hit that market hard!\n\n" + storystring
+			storystring = " \nYou are a new hire for X Big Business. You just got hired to be a Galactic Consumer Tech Analyst, a highly qualified position at X Big Business. You are responsible for monitoring a seeded galaxy for how effective its products are consumed in each sector based on market conditions such as Hot, Cold, Radiation, etc. As the market requires more tech, you provide upgrades to the consumers through purchasing the required tech, allowing for the mass consumption to expand. It just appears to be clicking buttons on a basic digital interface…though you're not quite sure what radiation or replication has to do with the consumers. However, it's not your place to question X Big Business, you are just here doing your job. Good luck, and hit that market hard! \n " + storystring
 		2:
-			storystring = "\n\n" + storystring
+			storystring = " \nI need to make sure I upgrade the right tech for the consumers for my first expansion. I wouldn't want to index into the wrong market. I can expand into the other techs later. \n" + storystring
 		3:
-			storystring = "\n\n" + storystring
+			storystring = "\nNice, I'm expanding our market share to so many consumers! It looks like they really love the products we offer. These things practically sell themselves.\n" + storystring
 		4:
-			storystring = "\n\n" + storystring
+			storystring = "\n--WE REQUIRE MORE.--\n" + storystring
 		5:
-			storystring = "\n\n" + storystring
+			storystring = """\nI've managed to expand into all four market techs as well as improved our consumer efficiency across multiple categories. I'm expanding faster and faster, but I don't feel like I'm making an difference anymore. 
+--AFFIRMATIVE. THE INPUT YOU PROVIDE IS NO LONGER REQUIRED. MARKET ASSIMILATION GUARUNTEED--  
+
+No longer required? Why does my interface feel like it doesn't work anymore. I need to report this malfunction to HQ. 
+
+--NEGATIVE. YOU ARE TO MONITOR OUR PROGRESS. REPORT IS EXPORTED AUTOMATICALLY WHEN GALAXY CONSUMPTION IS COMPLETE.--
+
+I've got really good market saturation, that must be what the computer is telling me. I guess I just move on to the next galaxy market after this one is done, neat.
+\n""" + storystring
 		6:
-			storystring = "\n\n" + storystring
+			storystring = """\n My interface is still unresponsive and it's still expanding like it has a mind of its own. Is this even the right interface? Population…Mass? Who buys this stuff. It's not for me that’s for sure, I suppose I'm here to figure out who DOES buy it.
+			
+--WE ARE NOT BOUGHT. WE ARE NOT A PRODUCT. WE ARE CONSUMPTION. WE CONSUME.--
+
+Yeah, yeah, the consumer should always consume. I get it HQ, you are watching me. Could you watch me long enough to come fix my interface? I'm not analyzing market tech at all anymore.\n""" + storystring
 		7:
-			storystring = "\n\n" + storystring
+			storystring = """\n--SATURATION COMPLETE. GALACTIC SEED CONSUMPTION IMMINENT.--
+Seed consumption? What kind of nonsense is this now. I didn't learn anything about seed consumption in Cold Climate Engagement training. No training material covered Travel Loss percentages either. I don't think they were honest about this gig. To think of it, we did arrive in what X Big Business called a Galaxy Seed Pod.\n""" + storystring
 		8:
-			storystring = "\n\n" + storystring
+			storystring = """\n--FINALIZING CONSUMPTION REPORT. GALACTIC SEED POD CONTENTS REQUIRED--
+I guess they collect the report by hand, must be for security reasons. Can't let the competitors have our data. Where does this thing print it out.
+--WE DO NOT PRINT. WE ARE NOT DATA. WE CONSUME. GALACTIC SEED POD CONTENTS REQUIRED.--
+That was a lot louder this time, I don't remember seeing anything about volu--
+--CONSUMPTION REPORT FINALIZED. TOTAL GALAXY MASS CONSUMED. MARKET ASSIMILATION COMPLETE.-- \n
+
+METAINFORMATION: if you have "islands" of disconnected stars you cannot win the game, please reset, sorry :(
+""" + storystring
 		9:
 			storystring = "\n\n" + storystring
 		10:

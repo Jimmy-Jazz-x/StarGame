@@ -19,6 +19,7 @@ script = ExtResource("1_qm0a2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_7s4sv")
+volume_db = 24.0
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

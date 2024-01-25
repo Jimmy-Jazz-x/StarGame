@@ -58,13 +58,16 @@ func attempt_Spread():
 	
 func Spread(Desitination):
 	#once Spread is scessful then actually spread by making a copy of the planet
-	print("SPREADING! HYPE!")
+	#print("SPREADING! HYPE!")
 	#spend Required Mass
 	$/root/Map/MasterResourceBank.Spend_Resource(Desitination.get_meta("MassRequired"))
 	Remove_Populace()
 	var NewPlayer = Player.instantiate()
 	get_parent().add_child(NewPlayer)
 	NewPlayer.Spawn(Desitination,PopulationLoss*$/root/Map/MasterResourceBank.TravelRate())
+	
+	if get_parent().get_child_count() == 1:
+		$/root/Map.TriggerStory(3)
 	pass
 
 func Update():

@@ -258,7 +258,6 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_en3gr")
 autowrap_mode = 3
 
 [connection signal="pressed" from="PanelContainer1/HotButton" to="." method="_on_hot_button_pressed"]
